@@ -72,6 +72,12 @@ const RegisterScreen = () => {
           />
         </View>
         <Pressable
+          onPress={() =>
+            navigation.navigate("PlanScreen", {
+              email: input,
+              password: password,
+            })
+          }
           style={
             password.length > 4
               ? {
@@ -103,11 +109,11 @@ const RegisterScreen = () => {
               color: "white",
             }}
           >
-            Sign in
+            Register
           </Text>
         </Pressable>
         <Pressable
-          onPress={() => navigation.navigate("RegisterScreen")}
+          onPress={() => navigation.navigate("LoginScreen")}
           style={{
             width: 300,
             marginLeft: "auto",
@@ -123,7 +129,7 @@ const RegisterScreen = () => {
               marginTop: 15,
             }}
           >
-            New to Netflix? Sign up Now
+            Have an account? Login Now
           </Text>
         </Pressable>
       </KeyboardAvoidingView>
