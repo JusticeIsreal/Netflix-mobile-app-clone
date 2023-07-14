@@ -1,4 +1,5 @@
-import React from "react";
+import { useNavigation } from "@react-navigation/native";
+import React, { useState } from "react";
 import {
   View,
   StyleSheet,
@@ -6,10 +7,18 @@ import {
   SafeAreaView,
   KeyboardAvoidingView,
   Image,
+  Pressable,
 } from "react-native";
 import { Input } from "react-native-elements";
 
 const LoginScreen = () => {
+  // for page routing
+  const navigation = useNavigation();
+
+  // fform inpuut values state
+  const [input, setInput] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
     <SafeAreaView
       style={{
@@ -32,12 +41,14 @@ const LoginScreen = () => {
             }}
           />
         </View>
-        <View style={{ width: 300, marginTop: 45 }}>
+        <View style={{ width: 320, marginTop: 45 }}>
           <Input
             type="email"
             inputContainerStyle={{ borderBottomWidth: 0 }}
             placeholder="Enter Email"
             placeholderTextColor={"white"}
+            value={input}
+            onChangeText={(text) => setInput(text)}
             style={{
               width: 330,
               padding: 15,
@@ -48,8 +59,11 @@ const LoginScreen = () => {
           />
           <Input
             type="password"
+            secureTextEntry={true}
             placeholder="Enter Password"
             placeholderTextColor={"white"}
+            value={password}
+            onChangeText={(text) => setPassword(text)}
             style={{
               width: 330,
               padding: 15,
@@ -59,6 +73,61 @@ const LoginScreen = () => {
             }}
           />
         </View>
+        <Pressable
+          style={
+            password.length > 4
+              ? {
+                  width: 300,
+                  backgroundColor: "red",
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  padding: 14,
+                }
+              : {
+                  width: 300,
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  borderColor: "white",
+                  borderWidth: "2",
+                  padding: 14,
+                }
+          }
+        >
+          <Text
+            style={{
+              textAlign: "center",
+              fontSize: 19,
+              fontWeight: "700",
+              color: "white",
+            }}
+          >
+            Sign in
+          </Text>
+        </Pressable>
+        <Pressable
+          onPress={() => navigation.navigate("RegisterScreen")}
+          style={{
+            width: 300,
+            marginLeft: "auto",
+            marginRight: "auto",
+          }}
+        >
+          <Text
+            style={{
+              textAlign: "center",
+              color: "white",
+              fontSize: 19,
+              fontWeight: "600",
+              marginTop: 15,
+            }}
+          >
+            New to Netflix? Sign up Now
+          </Text>
+        </Pressable>
       </KeyboardAvoidingView>
     </SafeAreaView>
   );
