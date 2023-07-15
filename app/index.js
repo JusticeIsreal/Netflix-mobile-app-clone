@@ -30,7 +30,7 @@ function App() {
         name="PlanScreen"
         component={PlanScreen}
         options={{
-          // headerShown: false,
+          headerShown: false,
         }}
       />
     </Stack.Navigator>
