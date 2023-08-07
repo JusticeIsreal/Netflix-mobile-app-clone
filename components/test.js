@@ -12,7 +12,7 @@ const data = [
     name: "Sarah",
   },
   {
-    id: "3",
+    id: "",
     name: "Jennifer",
   },
 ];
