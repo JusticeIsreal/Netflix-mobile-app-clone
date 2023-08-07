@@ -7,7 +7,7 @@ export const Plans = [
     resolution: "480P",
     devices: [
       { id: 10, name: "mobile" },
-      { id: 10, name: "tablet" },
+      { id: 11, name: "tablet" },
     ],
   },
   {
