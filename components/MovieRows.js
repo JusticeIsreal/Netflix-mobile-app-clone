@@ -1,14 +1,19 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { FlatList, StyleSheet, Text, View } from "react-native";
+import React from "react";
+import movieUrl from "../data/movieUrl";
+import MovieRow from "./MovieRow";
 
 const MovieRows = () => {
+  const data = movieUrl;
   return (
     <View>
-      <Text>MovieRows</Text>
+      {data.map((movie) => (
+        <MovieRow key={movie.id} {...movie} />
+      ))}
     </View>
-  )
-}
+  );
+};
 
-export default MovieRows
+export default MovieRows;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});

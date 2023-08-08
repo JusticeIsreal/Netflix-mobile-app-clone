@@ -32,12 +32,12 @@ export default [
     url: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_original_language=kn&year=2022`,
   },
   {
-    id: "4",
+    id: "5",
     name: "Romance Movies",
     url: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=37`,
   },
   {
-    id: "5",
+    id: "6",
     name: "Netflix Orginals",
     url: `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&with_networks=213`,
   },
