@@ -30,12 +30,27 @@ const TrendingComponent = () => {
   }, []);
   console.log(movies);
   return (
-    <View>
-      <Text style={{ color: "white" }}>Trending Component</Text>
-      <ScrollView>
-        {movies?.slice(0, 10).map((movie, id) => {
-          <Pressable key={id}>
-            <Text style={{ color: "white" }}>h</Text>
+    <View style={{ marginTop: 20 }}>
+      <ScrollView horizontal showsVerticalScrollIndicator={false}>
+        {movies?.slice(0, 10).map((movie, id) => (
+          <Pressable
+            key={movie.id}
+            style={{ flexDirection: "row", alignItems: "center", margin: 10 }}
+          >
+            <Text
+              style={{
+                color: "white",
+                fontSize: 85,
+                fontWeight: "bold",
+                position: "absolute",
+                top: 40,
+                right: 70,
+                marginTop: 20,
+                zIndex: 5,
+              }}
+            >
+              {id + 1}
+            </Text>
             <Image
               style={{
                 width: 105,
@@ -47,8 +62,8 @@ const TrendingComponent = () => {
                 uri: `https://image.tmdb.org/t/p/original/${movie?.poster_path}`,
               }}
             />
-          </Pressable>;
-        })}
+          </Pressable>
+        ))}
       </ScrollView>
     </View>
   );
