@@ -23,7 +23,7 @@ function App() {
             <Stack.Screen
               name="Login"
               component={LoginScreen}
-              options={{
+              ptions={{
                 headerShown: false,
               }}
             />
